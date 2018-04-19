@@ -29,13 +29,27 @@
 VMEdit is a visual content MathML editor.
 In the standard workflow parallel markup is generated from LaTeX input, which we visualize in expression tree form.
 Then, the user alters the tree structure via drag and drop and links symbols to content dictionary entries.
-In addition to the standard OpenMath content dictionaries, wikidata items can be used as content symbols.
+In addition to the standard OpenMath content dictionaries, Wikidata items can be used as content symbols.
 \end{abstract}
 
 \keywords{MathML, VMEXT}
 \section{Introduction}
+Wikimedia has invsted heavily in lowering the burden for contributors, by developing a visual editor.
+Unlike many other wysiwyg editor Wikimedias editor produces very clean an minimalistic markup.
+Thus, traditional contributers can continue changing the wikitext markup rather than using the new visual editor.
+However, the math editing feature of the visual editor is limited as it only provides a list of LaTeX templates rather than allowing to edit the formula layout visually.
+In addition, Wikidata, Wikimedias language indendent central knowledgebase, also allows to store and edit mathematical formulae.
+In Wikidata only the source code of the formula can be edited.
+Nontheless, due to the large number of items and relations between the items Wikdiata alredy contains a significant fraction of world knowlede in machine readable form.
+Outside of Wikimedia there are a few visual editors for MathML, of which some support the generastion of content MathML, most notable formulator and the WIRS editor~\cite{Formulator,Marques2006}.
+Moreover, there are various standards for representinig Mathematical Knowledge~\cite{Lange2013}.
+Also, active documents for mathematical content~\cite{Kohlhase11} have been developed make use of semantically rich formulae.
 \section{Goal and Vision}
+While editing mathematical formuale using standard \LaTeX{} macros is effective in reproducing printing material on the screen, we argue that better editors for both Wikipedia and Wikidata will facilitate the creation of semantically rich mathematical expressions.
+Semantically augmented mathematical expressions have siginificant advantage over presentation only formulae~\cite{dis}.
+For instance, they are better searchabe, computable and can iteractively support the reader with disambiguation and explaination tasks.
 \section{Implementation}
+VMEdit attempts to fill this gap taking advantage of the VMEXT visualization~\cite{vmext17}.
 \section{Conclusion and Outlook}
 \printbibliography
 \end{document}
