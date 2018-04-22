@@ -5,15 +5,14 @@
  style=numeric,
  url=false,
  isbn=false,
+ doi=false
 	]{biblatex}
 
 \usepackage[
   citations=true,
   hybrid=true
    ]{markdown}
-
 \addbibresource{main.bib}
-
 \begin{document}
 \title{VMEdit: A Visual Wikidata aware content MathML Editor}
 
@@ -38,7 +37,10 @@ In addition to the standard OpenMath content dictionaries, Wikidata items can be
 \end{abstract}
 
 \keywords{MathML, VMEXT}
+
 \markdownInput{main.md}
 
-%\printbibliography
+\printbibliography[keyword=primary]
+\clearpage
+\input{main.md}
 \end{document}
