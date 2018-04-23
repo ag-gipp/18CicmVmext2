@@ -1,7 +1,6 @@
 addons:
   apt:
     packages:
-    - latexmk
     - biber
 install:
  - source ./texlive_install.sh
