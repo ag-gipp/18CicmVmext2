@@ -23,24 +23,24 @@ Consequently, we need a Math editing tool that fulfills the following requiremen
 * It must allow the user to augment the formulae in terms of Wikidata items.
 * The content must be editable without changing the layout.
 * It should produce standard compatible, MathML output.
-* The tool and it's source code must be available under a MediaWiki compatible licence.
+* The tool and it's source code must be available under a MediaWiki compatible license.
 
 Among the available tools, only the WIRS editor seems to be actively maintained and widely used.
-However, the editor is not open source and content MathML is only supported as an alternative to presentation MathML.
-While for most use cases the determination of the presentation from content form is highly desirable, for Wikimedia use the backwards compatibility is  condicio sine qua non.
-Thus, the content editor must provide semantics as add on without changing the presentation form.
+However, the editor is not open source, and content MathML is only supported as an alternative to presentation MathML.
+While for most use cases the determination of the presentation from the content form is highly desirable, for Wikimedia use the backward compatibility is a condicio sine qua non.
+Thus, the content editor must provide semantics as an add-on without changing the presentation form.
 
 ## Implementation
 VMEdit attempts to fill this gap taking advantage of the VMEXT visualization~[@vmext17].
 The workflow is as follows:
 
-1. A user starts from a traditional LaTeX formulae and an item in the knowledge base
+1. A user starts from a traditional LaTeX formula and an item in the knowledge base
 2. The initial tree representation is generated via LaTeXML and visualized using the VMEXT visualization.
 3. The user know might link individual symbols to wikidata items
 4. The user might reorder the tree or change the MathML field directly.
 5. If the user is satisfied with the result, she submits the result
-6. If the semantics can be modelled by changing properties of the item the change is directly inserted into Wikidata to be edited, otherwise a bug report is created
-7. If a bug report was created the tool maintainers are notified. The user has the oppertunity to add additional comments on his intended change.
+6. If the semantics can be modeled by changing properties of the item the change is directly inserted into Wikidata to be edited, otherwise a bug report is created
+7. If a bug report was created the tool maintainers are notified. The user has the opportunity to add additional comments on his intended change.
 
 ### Technology
 
