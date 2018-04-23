@@ -44,12 +44,12 @@ The workflow is as follows:
 
 ### Technology
 
-The implementation is done in pure javascript with node and brunch. 
+The implementation is done in javascript with [node](https://nodejs.org) and [brunch](https://brunch.io). For details please refere to our git repository.
 
-The bug report  
+The bug report will be sent to github and allow for a later 
 
 ## Conclusion and Outlook
 
-VMEdit is now in a gioi
+VMEdit is in a first round 
 
 ### Non Wikimedia use
