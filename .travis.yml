@@ -1,9 +1,14 @@
 addons:
   apt:
     packages:
-    - texlive-full
     - latexmk
     - biber
+install:
+ - source ./texlive_install.sh
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
 script:
 - latexmk
 after_success:
