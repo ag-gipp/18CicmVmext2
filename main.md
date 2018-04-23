@@ -21,8 +21,8 @@ Consequently, we need a Math editing tool that fulfills the following requiremen
 
 * The tool must not disturb current editing workflows.
 * It must allow the user to augment the formulae in terms of Wikidata items.
-* The content must be editable without changing the layout.
-* It should produce standard compatible, MathML output.
+* The semantics must be editable without changing the layout.
+* The tool produce standard compatible, MathML output.
 * The tool and it's source code must be available under a MediaWiki compatible license.
 
 Among the available tools, only the WIRS editor seems to be actively maintained and widely used.
@@ -44,12 +44,22 @@ The workflow is as follows:
 
 ### Technology
 
-The implementation is done in javascript with [node](https://nodejs.org) and [brunch](https://brunch.io). For details please refere to our git repository.
+The implementation is done in javascript with [node](https://nodejs.org) and [brunch](https://brunch.io). For details please refer to our git repository.
+Since all user input is stored in the bug report, it's possible to apply the changes at a later point in time.
 
-The bug report will be sent to github and allow for a later 
+### Linking of symbols
+To link a content symbol a popup opens that let's you choose the appropriate wikidata symbol.
+
+### Changing of the structure
+The content MathML structure can be changed by drag and drop.
+
 
 ## Conclusion and Outlook
 
-VMEdit is in a first round 
+VMEdit is a first step towards semantic formulae in the Wikimedia projects.
+The future will show, if the tool is used by the community.
 
-### Non Wikimedia use
+\paragraph*{Non Wikimedia use}
+
+Technically, the tool can also used in connection with another knowledge-base or even without a dedicated knowledgebase just for editing MathML.
+We plan to integrate it to the DRMF website which uses a different LaTeX dialect, but also a Wikibase knowledge base.

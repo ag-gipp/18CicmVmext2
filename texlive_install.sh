@@ -80,7 +80,11 @@ tlmgr install   \
   imakeidx      \
   csvsimple     \
   paralist      \
-  markdown
+  markdown      \
+  ocgx2         \
+  biber         \
+  biblatex      \
+  media9
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0

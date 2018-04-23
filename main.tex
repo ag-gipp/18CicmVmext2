@@ -39,8 +39,8 @@ In addition to the standard OpenMath content dictionaries, Wikidata items can be
 \keywords{MathML, VMEXT}
 
 \markdownInput{main.md}
-
+% Hack to trigger the MD update when running with latexmk -pvc
+\phantom{\input{main.md}}{}
+% end hack
 \printbibliography[keyword=primary]
-\clearpage
-\input{main.md}
 \end{document}
