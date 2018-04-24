@@ -225,3 +225,4 @@ TSWLatexianTemp*
 # standalone packages
 *.sta
 
+_markdown_*

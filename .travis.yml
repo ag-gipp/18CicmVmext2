@@ -5,7 +5,7 @@ cache:
     - /tmp/texlive
     - $HOME/.texlive
 script:
-- latexmk
+- latexmk || latexmk
 after_success:
 - git config --global user.email "builds@travis-ci.com"
 - git config --global user.name "Travis CI"
