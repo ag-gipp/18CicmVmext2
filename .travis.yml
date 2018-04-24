@@ -1,7 +1,3 @@
-addons:
-  apt:
-    packages:
-    - biber
 install:
  - source ./texlive_install.sh
 cache:

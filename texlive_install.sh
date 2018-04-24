@@ -84,7 +84,8 @@ tlmgr install   \
   ocgx2         \
   biber         \
   biblatex      \
-  media9
+  media9        \
+  latexmk
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
