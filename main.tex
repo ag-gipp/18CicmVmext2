@@ -1,11 +1,12 @@
 \documentclass{llncs}
-
+\usepackage[utf8]{inputenc}
 \usepackage[
  backend=biber,
  style=numeric,
  url=false,
  isbn=false,
- doi=false
+ doi=false,
+ bibencoding=utf8
 	]{biblatex}
 
 \usepackage[
@@ -40,7 +41,7 @@ In addition to the standard OpenMath content dictionaries, Wikidata items can be
 
 \markdownInput{main.md}
 % Hack to trigger the MD update when running with latexmk -pvc
-\phantom{\input{main.md}}{}
+%\phantom{\input{main.md}}{}
 % end hack
 \printbibliography[keyword=primary]
 \end{document}
