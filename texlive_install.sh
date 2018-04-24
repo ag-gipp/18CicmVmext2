@@ -85,7 +85,8 @@ tlmgr install   \
   biber         \
   biblatex      \
   media9        \
-  latexmk
+  latexmk       \
+  logreq
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
