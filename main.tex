@@ -38,10 +38,16 @@ In addition to the standard OpenMath content dictionaries, Wikidata items can be
 \end{abstract}
 
 \keywords{MathML, VMEXT}
-
+\begin{figure}[t]
+\includegraphics[width=\textwidth]{images/overview.png}
+\caption{Math editing component of the Visual Editor.
+ As of April 2018 users need either to know the {\LaTeX}-command for fraction or use the fraction tempate ($\frac{2}{4}$, hightlighted in yellow) and replace 2 by the nominator and 4 by the denominator of the formula.
+ VMedit will improve this dialog by adding semantic intput as alternative in the top panel (Semantics, highlighted in yellow).}\label{fig.overview}
+\end{figure}
 \markdownInput{main.md}
-% Hack to trigger the MD update when running with latexmk -pvc
-%\phantom{\input{main.md}}{}
-% end hack
+\begin{figure}[t]
+\includegraphics[width=\textwidth]{images/vis.png}
+\caption{MathML source editor (left) and visual content tree editor (right)}
+\end{figure}
 \printbibliography[keyword=primary]
 \end{document}

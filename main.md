@@ -1,28 +1,34 @@
 ## Introduction
 
-Scientific papers in science, technology, engineering and mathematics as well was science-related content in other formats, e.g. Wikipedia, contain a high density of mathematical formulae.
+Publications in science, technology, engineering and mathematics as well was science-related content in other formats, e.g. Wikipedia, contain a high density of mathematical formulae.
 Therefore, computer-related processing of this data requires specific approaches.
 While editing mathematical formulae using standard \LaTeX{} macros is efficient for the production of printing media, semantically-augmented mathematical expressions, e.g. in content MathML, have significant advantages over presentation only formulae~[@dis].
-Semantically-augmentes mathematical formulae are better searchable and computable and can interactively support the reader in disambiguating formulae or single identifiers as well as give additional explanations to the reader. 
-For MathML, a few visual exist.
+Semantically-augmentes mathematical formulae are better searchable and computable and can interactively support the reader in disambiguating formulae or single identifiers as well as give additional explanations to the reader.
+One implementation of this using MathML are active-documents for mathematical content~[@Kohlhase11] which make use of semantically-rich formulae.
+To edit MathML, a few visual editors exist.
 Some of the visual editors, most notable 'formulator`~[@Formulator] and the WIRS editor~[@Marques2006], support the generation of content MathML.
 From the available tools, only the WIRS editor seems to be maintained and widely used.
 However, the editor is not open source, and it supports content MathML only as an alternative to presentation MathML.
 For most use cases, determining the presentation from the content form is highly desirable.
-Nevertheless, for Wikimedia use, the backward compatibility is a condicio sine qua non.
+Nevertheless, for Wikimedia and other large exiting presentation based digital libraries, the backward compatibility is a condicio sine qua non.
 Thus, the content editor must provide semantics as an add-on, without changing the presentation form.
-Also, active-documents for mathematical content~[@Kohlhase11] make use of semantically-rich formulae.
 
-Wikimedia is making a lot of effort to facilitate contributors to create and edit content in Wikipedia.
-Especially, the development of a visual editor eased the process for many contributors.
-Nonetheless it still enables users to change the wikitext markup, as the editor produces very clean and minimalistic markup.
-However, the visual editor is still unsatisfactory for content with mathematical expressions, as it provides a list of LaTeX templates rather than allowing to edit the formula layout visually.
+
+Wikimedia invested significantly to be more inclusive and allow everyone to create and edit content in Wikipedia.
+Especially, the development of a visual editor eased the process for many contributors, since knowledge of the syntax of wikitext markup is no longer needed.
+Nonetheless, in contrast to other WYSIWYG editors, the Visual Editor still enables users to  conveniently edit the wikitext markup, as the editor produces very clean and minimalistic markup.
+This way, the huge existing editor group is not antagonized.
+However, the visual editor is still unsatisfactory for content with mathematical expressions, as it provides a list of LaTeX templates rather than allowing to edit the formula layout visually as shown in Figure~\ref{fig.overview}.
 
 Wikidata, Wikimedia's language-independent central knowledgebase, contains a significant fraction of world knowledge in machine-readable form, due to a large number of items as well as links between the items.
 It allows to store and edit mathematical formulae.
 Nevertheless, only the presentation form of the formula can be edited in Wikidata. 
 
-We have the vision of an extension of the visual editor in Wikimedia that allows contributors to semantically enrich mathematical expressions.
+Our goal is to extend the visual editor for Wikipedia that allows contributors to semantically enrich mathematical expressions.
+
+%***TODO*** continue from here
+
+
 Therefore, a visual expression tree will be provided for the formulae.
 Thus, the user of the editor can add content to every element of the mathematical expression.
 The formulae as well as the added data can be stored in Wikidata.
@@ -56,6 +62,7 @@ Therefore, the user can add additional comments on his intended change.
 ### Technology
 
 The implementation is done in javascript with [node](https://nodejs.org) and [brunch](https://brunch.io).
+For the code editor, we use [CodeMirror](http://codemirror.net/) and for the graph visualization [cytoscape](https://js.cytoscape.org/) with the [dagre](http://doi.org/10.5281/zenodo.1211727)-plugin.
 For details, please refer to our git repository.
 Since all user input is stored in the bug report, it is possible to apply the changes later.
 
