@@ -1,6 +1,8 @@
 \documentclass{llncs}
+
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+
 \usepackage[
  backend=biber,
  style=numeric,
@@ -8,7 +10,8 @@
  isbn=false,
  doi=false,
  bibencoding=utf8
-	]{biblatex}
+    ]{biblatex}
+\addbibresource{main.bib}
 
 \usepackage[
   citations=true,
@@ -20,37 +23,30 @@
   }
 }
 
-\addbibresource{main.bib}
 \begin{document}
+
 \title{VMEXT2: A Visual Wikidata aware content MathML Editor}
-
-\author{
-   Moritz Schubotz
+\author{Moritz Schubotz}
+\institute{Dept.~of Computer and Information Science,\\
+    University of Konstanz, Box 76, 78464 Konstanz, Germany,\\
+    \email{moritz.schubotz@uni-konstanz.de}
 }
-
-\institute{
-	\hspace{-0.15cm}
-	Dept.~of Computer and Information Science,\\
-	University of Konstanz, Box 76, 78464 Konstanz, Germany,\\
-	\email{moritz.schubotz@uni-konstanz.de}
-}
-
 \maketitle
 
 \begin{abstract}
 VMEXT is a {\bf V}isualization of the content {\bf M}athML {\bf EX}pression {\bf T}ree.
 In VMEXT2, we add the functionality to edit the content MathML expressions visually.
 In addition to the standard OpenMath based content dictionaries, Wikidata items can be used as content symbols.
-Moreover, we added a MathML souce code editor to allow for a seamless integration of a visual and non visual editing workflow.
+Moreover, we added a MathML source code editor to allow for seamless integration of a visual and nonvisual editing workflow.
 We regard VMEXT2 as a step forward to a semantic formula editor for Wikipedia.
 \end{abstract}
 
-\keywords{MathML, VMEXT}
+\keywords{MathML, Expression Tree, Editor, JavaScript, Node.js}
 \begin{figure}[t]
 \includegraphics[width=\textwidth]{images/overview.png}
 \caption{Math editing component of the VisualEditor.
- As of April 2018, users need either to know the {\LaTeX}-command for fraction or use the fraction template ($\frac{2}{4}$, hightlighted in yellow) and replace 2 by the nominator and 4 by the denominator of the formula.
- We will improve this dialog by adding semantic intput as alternative in the top panel (semantics, highlighted in yellow).}\label{fig.overview}
+ As of April 2018, users either need to know the LaTeX-command for `fraction' or use the fraction template ($\frac{2}{4}$, highlighted in yellow) and replace 2 by the nominator and 4 by the denominator of the formula.
+ We will improve this dialog by adding semantic input as an alternative in the top panel (semantics, highlighted in yellow).}\label{fig.overview}
 \end{figure}
 \markdownInput{main.md}
 \paragraph*{Acknowledgments} We thank the developers Ludwig Goohsen, Stefan Kaufhold, Jonas Kress, Vincent Stange and many others for their open source contributions.
