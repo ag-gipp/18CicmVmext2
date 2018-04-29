@@ -81,10 +81,12 @@ VMEXT consists of the following modules:
 
 With VMEXT2, we transformed a tree visualization for the content MathML expression tree that was only capable to visualize the MathML expression tree into a content MathML editor.
 Moreover, we linked presentation and content more closely together and created directs mappings between the visualization and the code representation. 
-By doing so, ' is a first step towards semantic formulae in the Wikimedia projects.
-The future will show, if the tool is used by the community.
+By doing so, a first step towards semantic formulae in the Wikimedia projects is done.
+However many steps are still open:
 
-\paragraph*{Non-Wikimedia use}
+1. We are currently developing a MathML API to Wikidata that allows to read and write MathML expressions to Wikidata
+2. We are looking for a real visual editing component for presentation MathML that can be integrated to Wikimedia's VisualEditor under the given licence OpenSource licence and backwards compatibility constraints
+3. After step 1. is completed, we will do user experiments to investigate if our editor is accepted by the community.
 
-Technically, the tool can also be used with another knowledgebase or for editing MathML without a dedicated knowledgebase.
-We plan to integrate it to the DRMF website which uses a different LaTeX dialect, but also a Wikibase knowledge base.
+Besides the main use case in Wikipedia and other MediaWikis such as the [DRMF](https://drmf.wmflabs.org), the components described in Section 3 can be used for various purposes in the web.
+Moreover, VMEXT can also be used with another knowledgebase or for editing MathML without a dedicated knowledgebase.
