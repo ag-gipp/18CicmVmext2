@@ -29,24 +29,30 @@ Wikidata, Wikimedia's language-independent central knowledgebase, contains a sig
  
 In the following, we will describe our Approach in Section 2, present the current state of our Implementation in Section 3 and describe the next steps in Section 4.
 
-## Approach
+## Our MathML Interface Approach
 
+As motivated in Section 1, we need a math editing tool that fulfills the following requirements: The tool
+                              
+  * must allow the user to augment the formulae with Wikidata items.
+  * should allow to edit semantics without changing the layout.
+  * and its source code must be available under a MediaWiki compatible license.
+  * must not disturb current editing workflows.
 
+  
+\noindent To take advantage of the related works regarding math editing, we suggest that MathML should be used as the communication standard to store and retrieve formula data from Wikidata.
+In addition to the existing Wikidata endpoints, that allow to access store and retrieval data from Wikidata in XML, RDF and JSON(p) forms, we will establish a new interface that sends and retrieves MathML for Wikidata items with mathematical content.
+Therefore, we introduced an implicit content dictionary (wikidata) that allows to use any Wikidata item as content MathML symbol.
+Based on this interface, we designed a content MathML editor that uses standard conform MathML extended by the special Wikdiata content dictionary.
 
-Therefore, a visual expression tree will be provided for the formulae.
-Thus, the user of the editor can add content to every element of the mathematical expression.
-The formulae as well as the added data can be stored in Wikidata.
-Thus, better editors for both, Wikipedia and Wikidata, will facilitate the creation of semantically-rich mathematical expressions.
-
-
-Consequently, we need a math editing tool that fulfills the following requirements:
-The tool
-
-* must allow the user to augment the formulae with Wikidata items.
-* should allow to edit semantics without changing the layout.
-* produces standard compatible MathML output.
-* and its source code must be available under a MediaWiki compatible license.
-* must not disturb current editing workflows.
+For the content MathML editor, we extend our content MathML visualization (VMEXT)~[@vmext17] so that the tree structure of the expression can not only be displayed but also be modified.
+However, we do not intend to hide the MathML format, thus we use four interlinked visualizations for a single formulae.
+VMEXT has two visual representations of the traditional presentation rendering and the expression tree representation of the content MathML.
+In this new version VMEXT2, we added interlinked source code editors for presentation and content MathML.
+Any change in one representation automatically updates the other representations.
+As visualized in Figure 2 hovering over elements, in the screenshot the probability $P$, results in the highlighting of this elements in all 3 three remaining representations.
+In addition popups display additional semantics.
+For csymbol elements this is label and description from Wikdiata element.
+Especially for the Wikidata items, whose unique identifiers don't carry human readable semantics, the popup and auto completion features in the visual and source code prevent the obfuscation of the semantics by the Wikidata item ids.
 
 
 ## Implementation
@@ -77,7 +83,6 @@ To link a content symbol to Wikidata, a popup opens that let the user choose the
 ### Changing of the structure
 The content MathML structure can be changed by drag and drop.
 
-\clearpage
 ## Conclusion and Outlook
 
 VMEdit is a first step towards semantic formulae in the Wikimedia projects.
