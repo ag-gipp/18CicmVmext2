@@ -1,5 +1,6 @@
 \documentclass{llncs}
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 \usepackage[
  backend=biber,
  style=numeric,
@@ -13,6 +14,12 @@
   citations=true,
   hybrid=true
    ]{markdown}
+\markdownSetup{
+  renderers = {
+    link = {\href{#2}{#1}}
+  }
+}
+
 \addbibresource{main.bib}
 \begin{document}
 \title{VMEXT2: A Visual Wikidata aware content MathML Editor}

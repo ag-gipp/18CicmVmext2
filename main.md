@@ -44,48 +44,44 @@ In addition to the existing Wikidata endpoints, that allow to access store and r
 Therefore, we introduced an implicit content dictionary (wikidata) that allows to use any Wikidata item as content MathML symbol.
 Based on this interface, we designed a content MathML editor that uses standard conform MathML extended by the special Wikdiata content dictionary.
 
+\input{figVis}
+
+
 For the content MathML editor, we extend our content MathML visualization (VMEXT)~[@vmext17] so that the tree structure of the expression can not only be displayed but also be modified.
 However, we do not intend to hide the MathML format, thus we use four interlinked visualizations for a single formulae.
 VMEXT has two visual representations of the traditional presentation rendering and the expression tree representation of the content MathML.
 In this new version VMEXT2, we added interlinked source code editors for presentation and content MathML.
+To make this representation more explicit, we made the apply free form, which replaces the explicit display of apply nodes by the first child, optional.
+In particular, by clicking on the apply node the first child is expanded.
+By doing do the user experiences a one to one mapping between content MathML elements  
 Any change in one representation automatically updates the other representations.
-As visualized in Figure 2 hovering over elements, in the screenshot the probability $P$, results in the highlighting of this elements in all 3 three remaining representations.
+As visualized in Figure 2 hovering over elements, in the screenshot the probability $P$, results in the highlighting of this elements in all three remaining representations.
 In addition popups display additional semantics.
 For csymbol elements this is label and description from Wikdiata element.
 Especially for the Wikidata items, whose unique identifiers don't carry human readable semantics, the popup and auto completion features in the visual and source code prevent the obfuscation of the semantics by the Wikidata item ids.
 
 
 ## Implementation
-\input{figVis}
-VMEdit attempts to fill this gap taking advantage of the VMEXT visualization~[@vmext17].
-The workflow is as follows:
 
-1. A user starts from a traditional LaTeX formula and an item in Wikidata
-2. The initial tree representation is generated via LaTeXML and visualized using the VMEXT visualization.
-3. The user might link individual symbols to wikidata items.
-4. The user might reorder the tree or change the MathML field directly.
-5. If the user is satisfied with the result, the result can be submitted.
-6. If the semantics can be modeled by changing properties of the item, the change is directly inserted into Wikidata to be edited.
-Otherwise, a bug report is created.
-7. If a bug report was created, a notification is sent to the tool maintainers.
-Therefore, the user can add additional comments on his intended change.
+For the implementation, we followed the approach to take advantage of well established open source technology and use the APIs in order to extend the functionality according to our needs.
+In the following we will describe the individual modules of VMEXT2 and describe the connection to existing technology.
+VMEXT consists of the following modules:
 
-### Technology
+* ***vmext*** The parent [node.js](https://nodejs.org) module that bundles the components and presents the demo. We strive to implement everything in isomorphic JavaScript and use [brunch](https://brunch.io) to bring node modules to the browser. 
+* ***mathml*** MathML is the core  module that allows to load modify and render MathML input. It is based on the XML processing node module [xtraverse](https://www.npmjs.com/package/xtraverse).
+* ***[cytoscape](https://js.cytoscape.org/)-mathml*** cytoscape MathML is a plugin to the graph visualization cytoscape with the [dagre](http://doi.org/10.5281/zenodo.1211727)-plugin and provides the interactivity with the MathML tree.
+* ***[codemirror](http://codemirror.net/)-mathml*** is a plugin for codemirror. It extends the CodeMirror XML autocompletion plugin and provides auto completion for MathML
+* ***[codemirror](http://codemirror.net/)-wikidata*** is a plugin for codemirror. It provides autocompletion for Wikidata entities and tooltips for Wikidata elements.
 
-The implementation is done in javascript with [node](https://nodejs.org) and [brunch](https://brunch.io).
-For the code editor, we use [CodeMirror](http://codemirror.net/) and for the graph visualization [cytoscape](https://js.cytoscape.org/) with the [dagre](http://doi.org/10.5281/zenodo.1211727)-plugin.
-For details, please refer to our git repository.
-Since all user input is stored in the bug report, it is possible to apply the changes later.
+ 
 
-### Linking of symbols
-To link a content symbol to Wikidata, a popup opens that let the user choose the appropriate Wikidata item.
-
-### Changing of the structure
-The content MathML structure can be changed by drag and drop.
+\noindent Please refer to [vmext.formulasearchengine.com](https://vmext.formulasearchengine.com) for detailed information on the used versions and up to date install instructions.
 
 ## Conclusion and Outlook
 
-VMEdit is a first step towards semantic formulae in the Wikimedia projects.
+With VMEXT2, we transformed a tree visualization for the content MathML expression tree that was only capable to visualize the MathML expression tree into a content MathML editor.
+Moreover, we linked presentation and content more closely together and created directs mappings between the visualization and the code representation. 
+By doing so, ' is a first step towards semantic formulae in the Wikimedia projects.
 The future will show, if the tool is used by the community.
 
 \paragraph*{Non-Wikimedia use}
