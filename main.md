@@ -2,15 +2,15 @@
 
 Publications in science, technology, engineering, and mathematics as well as science-related content in other formats, e.g., Wikipedia, contain a high density of mathematical formulae.
 Therefore, computer-related processing of this data requires specific approaches.
-Editing mathematical formulae using standard LaTeX macros is efficient for the production of print media. Nevertheless, semantically-augmented mathematical expressions, e.g., in content MathML, have significant advantages over presentation only formulae~[@dis], as they are better findable and computable.
-Furthermore, semantically-augmented mathematical expressions can interactively support the reader in disambiguating terms or identifiers and give additional explanations to the reader.
-One implementation is active-documents for mathematical content~[@Kohlhase11] that use MathML to implement semantically rich formulae, generated from the LaTeX-dialect sTeX.
+Editing mathematical formulae using standard LaTeX macros is efficient for the production of print media. Nevertheless, semantically-augmented mathematical expressions, e.g., in content MathML, have significant advantages over presentation-only formulae~[@dis], as they are better findable and computable.
+Furthermore, semantically augmented mathematical expressions can interactively support the reader in disambiguating terms or identifiers and give additional explanations to the reader.
+One implementation is active documents for mathematical content~[@Kohlhase11] that use MathML to implement semantically rich formulae, generated from the LaTeX-dialect sTeX.
 To edit MathML directly (without LaTeX), a few visual editors exist.
 Some of them, most notable `formulator'~[@Formulator] and the WIRIS editor~[@Marques2006], support the generation of content MathML.
 From the available tools, only the WIRIS editor seems to be maintained and widely used.
 However, the editor is not open source, and it supports content MathML only as an alternative to presentation MathML.
 For most use cases, determining the presentation based on the content form is highly desirable.
-Nevertheless, for large existing presentation-based digital libraries, such as Wikipedia, the backward compatibility is a condicio sine qua non.
+Nevertheless, for large existing presentation-based digital libraries, such as Wikipedia, the backward compatibility is a sine qua non.
 Thus, the content editor must provide semantics as an add-on, without changing the presentation form.
 
 
