@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/129869194.svg)](https://zenodo.org/badge/latestdoi/129869194)
 # VMEXT2: A Visual Wikidata aware Content MathML Editor
 
 VMEXT is a Visualization of the content MathML EXpression Tree.
