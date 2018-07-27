@@ -1,11 +1,16 @@
 install:
  - source ./texlive_install.sh
+addons:
+ apt:
+   packages:
+   - zip
 cache:
   directories:
     - /tmp/texlive
     - $HOME/.texlive
 script:
 - latexmk
+- source ./create-submission-file.sh
 after_success:
 - git config --global user.email "builds@travis-ci.com"
 - git config --global user.name "Travis CI"
@@ -23,6 +28,8 @@ deploy:
   skip_cleanup: true
   api_key:
     secure: acEIK6ns20xpvSafVx7JTG3g6vOKCJ9ZYHG/ADCx1fEggp8ax1SXEKgKs6+Bp2dZnlGL1pisSCROz+ie2KHrB4YJBv4SkaOICZYk6RPZnNujA8aJ2HLNJLX8mu4FqDfh0Ru4SKfS/qw/+TzdyFC6QdgiaBwj7VPUW8HiCdY7dmGx5PABrCwsI79iKKjhsI8iPb8umOy0d5Wp8VqckH/KWJZA8k5Hu1bfyhMmWs94Uq9yYVffiQUlG2thcRRP+7xjFHz4iS4kSNXlFgFftpBNuMXnyK4VipgTo9Q6a8Q9kNuKjsJlPcsAPAxqZZXI3Hv9TP0zruh1S7hQ/TjdSETMubE7B+Ce2xaiLjkRfVkEyziiRPyojv9hzybmv+u89ElHRUrFSwHvS1aoytCVMkDAkibj5+pJDen8syOOc6GL5mU9fFvWw1rslgaOhJg16aDivnmgXI/vXw+SJMfcgH4HTX0MlSo6rwEQFK6FZebqRDHaEf92RySpDmw/oN/RJ4l6qy8NvYoc7Qp6FUHEvSbPGKLprzQ4+pJXgygywLuc2gxACtgHE9l58jGhXKfC209zRNjCMhwBs1SdiQR/Aoaqn2CT1OSUOjy/7MdlXtCxj4OBg+MokJXW1pOEZ8vduYBQyo6cUcgL+HZL/VfkEzn54SyyURPha2ILRt4fVq+xwqM=
-  file: main.pdf
+  file:
+   - main.pdf
+   - submission.zip
   on:
     repo: ag-gipp/18CicmVmext2
