@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 Publications in science, technology, engineering, and mathematics as well as science-related content in other formats, e.g., Wikipedia, contain a high density of mathematical formulae.
 Therefore, computer-related processing of this data requires specific approaches.
@@ -27,7 +27,7 @@ Wikidata, Wikimedia's language-independent central knowledgebase, contains a sig
  
 In the following, we will describe our approach in section 2, present the current state of our implementation in section 3 and describe the next steps in section 4.
 
-## Our MathML Interface Approach
+# Our MathML Interface Approach
 
 As motivated in section 1, we need a math editing tool that fulfills the following requirements:
                               
@@ -59,7 +59,7 @@ For csymbol MathML elements, this is the combination label and description from 
 Especially for the Wikidata items, whose unique identifiers do not carry humanly readable semantics, the popup, and the auto-completion feature in the visual and source code view prevent the obfuscation of the semantics by the Wikidata item IDs.
 
 
-## Implementation
+# Implementation
 
 For the implementation, we followed the approach to take advantage of well established open source technology and use the APIs in order to extend the functionality according to our needs.
 In the following, we will describe the individual modules of VMEXT2 and describe the connection to existing technology.
@@ -75,7 +75,7 @@ VMEXT2 consists of the following modules:
 
 \noindent Please refer to [vmext.formulasearchengine.com](https://vmext.formulasearchengine.com) for detailed information on the used versions and up-to-date install instructions.
 
-## Conclusion and Outlook
+# Conclusion and Outlook
 
 With VMEXT2, we transformed a tree visualization for the content MathML expression tree, that was only capable of visualizing the MathML expression tree, into a content MathML editor.
 Moreover, we linked presentation and content more closely and created direct mappings between the visualization and the code representation. 
